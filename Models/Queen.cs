@@ -16,15 +16,25 @@ namespace QueenAttack.Models
 
     public bool canAttackVH(int enemyX, int enemyY)
     {
-      return enemyX == xCoord || enemyY == yCoord;
+      return enemyX == XCoord || enemyY == YCoord;
     }
 
     public bool canAttackDiagonal(int enemyX, int enemyY)
     {
       /*
+        Queen: 1,1
+        Enemy: 3,3
+      */
+      int shiftH = Math.Abs(enemyX - XCoord);
+      int shiftV = Math.Abs(enemyY - YCoord);
+      return shiftH == shiftV;
+      /*
         Queen: 1,3
         Enemy: 3,1
+        shiftH = 2;
+        shiftV = -2;
       */
+      
     }
   }
   
